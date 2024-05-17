@@ -1,0 +1,58 @@
+<div class="content">
+  <div class="container" *ngIf="playlist">
+    <!-- Información sobre la playlist seleccionada -->
+    <section class="content-a">
+      <header class="content__details">
+        <img class="content_details_cover" [src]="playlist.coverImage" alt="Playlist Cover">
+
+        <div class="album-info">
+          <h1>{{ playlist.playlistName }}</h1>
+          <p>Duración total: {{ formatDuration(totalDurationInSeconds) }}</p>
+        </div>
+      </header>
+    </section>
+
+    <!-- Lista de canciones de la playlist -->
+    <div class="list-songs" *ngIf="playlist.songs && playlist.songs.length > 0">
+      <div class="row table_header">
+        <div class="col">#</div>
+        <div class="col">Título</div>
+        <div class="col">Artista</div>
+        <div class="col">Duración</div>
+        <div class="col">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div *ngFor="let song of playlist.songs; let i = index" class="row">
+        <div class="col position-relative">{{ i + 1 }}
+          <!-- Play button for each song -->
+          <button (click)="playSong(song)" class="button button--primary button-play">
+            <span class="glyphicon glyphicon-play"></span>
+          </button>
+        </div>
+        <div class="col">{{ song.title }}</div>
+        <div class="col">{{ song.artist?.artistName }}</div>
+        <div class="col">{{ formatMM_SS(song.duration) }}</div>
+        <div class="col">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+
+        <div class="col">
+          <!-- Botón para eliminar la canción -->
+          <button class="btn btn-danger" (click)="removeSong(song)">
+            <i class="fas fa-minus-circle"></i> <!-- Ícono de menos para eliminar -->
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-player-controls *ngIf="selectedSong" [selectedSong]="selectedSong" [songs]="playlist?.songs"
+    [showControls]="showPlayerControls" [mediaType]="'audio'">
+  </app-player-controls>
+  </div>
+  
+</div>

@@ -1,0 +1,215 @@
+.content {
+    height: 100%;
+    background-color: black;
+    width: 100%;
+}
+
+.container {
+    background-color: #d9d9d933;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding: 80px;
+    color: white;
+    font-weight: bold;
+    height: auto;
+    margin-top: 40px;
+}
+
+.content-a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content__details {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.content__details__cover {
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    color: white;
+}
+
+.button {
+    border-radius: 4px;
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: #5551FF;
+    color: #5551FF;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+.button:hover {
+    background-color: #5551FF;
+}
+
+.list-songs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.list-songs a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.col {
+    flex: 1;
+    padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    width: 90px;
+    position: relative;
+}
+
+
+.col:nth-child(1):hover .button {
+    display: inline-block;
+}
+
+.song-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+.glyphicon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.gly {
+    border: none;
+    background-color: transparent;
+}
+
+.glyphicon-heart-empty {
+    color: grey;
+}
+
+.glyphicon-heart {
+    color: #5551FF;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 1%;
+    transform: translateY(-3%);
+    right: 15px;
+}
+.button:hover {
+    opacity: 1;
+}
+
+.button {
+    border-radius: 999px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}
+
+.button--primary {
+    background-color: #5551FF;
+    color: white;
+    border-radius: 999px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}
+
+.spotify-player {
+    width: 300px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.control-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 5px;
+    background-color: #888;
+    margin: 0 10px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #1db954;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.time {
+    color: #fff;
+}
+
+.button2 {
+    border-radius: 999px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    right: 15px;
+
+}
+
+.tituloAlbum {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.album-info h4 {
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: bold;
+}

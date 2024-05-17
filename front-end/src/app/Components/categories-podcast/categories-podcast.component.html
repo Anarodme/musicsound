@@ -1,0 +1,14 @@
+<body>
+    <div class="container">
+        <h3>PÓDCASTS</h3>
+        <h2>Categorías</h2>
+        <div class="categories">
+            <div *ngFor="let category of categories" class="card">
+                <div class="categories-info">
+                    <h2>{{ category.name }}</h2>
+                </div>
+                <a (click)="navigateToPodcasts(category.id)"><img [src]="['http://127.0.0.1:8000'+category.coverImage]" [alt]="category.name"></a>
+            </div>
+        </div>
+    </div>
+</body>

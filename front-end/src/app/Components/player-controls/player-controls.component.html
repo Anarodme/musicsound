@@ -1,0 +1,64 @@
+<!-- Audio player element -->
+<audio #audioPlayer (timeupdate)="handleTimeUpdate($event)">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+
+
+<div class="container1" *ngIf="selectedSong">
+    <div class="media-container">
+        <div class="mediaDetails">
+            <div>
+                <!-- Placeholder for media cover image -->
+                <img [src]="selectedSong?.album?.coverImage || selectedSong?.artist?.coverImage" alt="Media Cover"
+                    class="cover-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-style">
+            <div class="time-left">{{ formatTime(audioPlayer?.nativeElement?.currentTime ?
+                audioPlayer.nativeElement.currentTime : 0) }}</div>
+
+            <input id="progressBar" type="range" class="form-range" min="0" max="100"
+                [value]="(audioPlayer?.nativeElement?.currentTime / audioPlayer?.nativeElement?.duration * 100) || 0"
+                (input)="handleProgressBar($event)">
+
+            <div class="time-right">
+                <p *ngIf="audioPlayer?.nativeElement?.duration; else elseBlock">
+                    {{ formatTime(audioPlayer.nativeElement.duration) }}
+                </p>
+                <ng-template #elseBlock>
+                    <p>0:00</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Song information -->
+    <div class="song-info">
+        <!-- Song information  albums -->
+        <h3 class="title" *ngIf="selectedSong?.album?.artist?.artistName">
+            {{ selectedSong?.songTitle }} - {{ selectedSong?.album?.artist?.artistName }}
+        </h3>
+        <!-- Song information  playlists -->
+        <h3 class="title" *ngIf="!selectedSong?.album?.artist?.artistName && selectedSong?.artist?.artistName">
+            {{ selectedSong?.title }} - {{ selectedSong?.artist?.artistName }}
+        </h3>
+    </div>
+
+
+    <!-- Player controls -->
+    <div class="controls mt-3 player-button">
+        <button (click)="play_previous_song()" class="btn btn-primary skip-btn">
+            <i class="fas fa-backward"></i>
+        </button>
+        <button (click)="togglePlayPause()" class="btn btn-primary play-pause-btn">
+            <i class="fas" [ngClass]="playIcon"></i>
+        </button>
+        <button (click)="play_next_song()" class="btn btn-primary skip-btn">
+            <i class="fas fa-forward"></i>
+        </button>
+    </div>
+</div>

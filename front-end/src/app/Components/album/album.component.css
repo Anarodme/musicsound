@@ -1,0 +1,182 @@
+.container {
+  width: 100%;
+  background-color: black;
+  padding: 20px 0;
+  color: white;
+  align-items: center;
+  height: 1920px;
+}
+
+.container h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.albumes {
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.albumes a:hover {
+  text-decoration: none;
+  cursor: default; 
+}
+
+.albumes a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  cursor: default;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.card img {
+  width: 350px;
+  height: auto;
+}
+
+.album-info {
+  padding: 20px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.album-info h2 {
+  margin: 0;
+  font-size: 30px;
+  color: white;
+  padding: 12px;
+  margin-left: 185px;
+}
+
+.album-info p {
+  margin: 0;
+  font-size: 15px;
+  color: white;
+  text-align: left;
+  margin-left: 200px;
+
+}
+
+.year {
+  margin-top: 5px;
+  color: white;
+  font-size: 0.9em;
+  margin-left: 190px;
+
+}
+
+.btn-siguiente {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5551FF;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+/* Breakpoint para dispositivos pequeños */
+@media (max-width: 350px) {
+  .container h3 {
+    font-size: 25px;
+  }
+
+  .container h2 {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .album-info h2 {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .album-info p {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .year {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+/* Breakpoint para dispositivos medianos */
+@media (max-width: 768px) {
+  .container h3 {
+    font-size: 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+  .albumes {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .album-info h2,
+  .album-info p,
+  .year {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Breakpoint para dispositivos medianos */
+@media (max-width: 576px) {
+  .container h3 {
+    font-size: 1.2rem;
+  }
+
+  .container h2 {
+    font-size: 1rem;
+  }
+
+  .album-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .album-info p {
+    font-size: 0.8rem;
+  }
+
+  .year {
+    font-size: 0.8rem;
+  }
+}

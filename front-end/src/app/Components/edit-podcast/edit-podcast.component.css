@@ -1,0 +1,154 @@
+.container{
+    background-color: black;
+    width: auto;
+    height: 1050px;
+    font-family: 'Poppins';
+    color: white;
+}
+
+.mycontainer{
+    padding: 10px;
+}
+
+h1{
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+/*Edit form*/
+.div_form{
+    padding-bottom: 15px;
+}
+
+.save_btn{
+    padding-right: 90px;
+    text-align: right;
+}
+
+.save_btn button{
+    background-color: #969696;
+    width: 170px;
+    height: 40px;
+    font-size: 20;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+label{
+    padding-bottom: 15px;
+    font-size: medium;
+}
+
+.input_style{
+    background-color: black;
+    border: 1px solid white;
+    height: 40px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.textarea_style{
+    height: 100px;
+    width: 100%;
+    transition: border-color 0.3s;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.categories_style{
+    background-color: black;
+    border: 1px solid white;
+    height: 40px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.cover{
+    background-color: rgb(95, 90, 90);
+    border-radius: 5px;
+    padding: 20px;
+    width: 600px;
+    height: 200px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+
+.img-container {
+    width: 50%;
+}
+
+.button-container {
+    flex-grow: 1;
+    text-align: center;
+    margin: auto;
+}
+
+.img_cover{
+    width: 150px;
+    height: 150px;
+}
+
+.ui.segment{
+    width: 80%;
+}
+
+.field{
+    margin-bottom: 1em;
+}
+
+.ui.blue.inline.button{
+    background-color: #969696;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ui.blue.inline.button:hover{
+    background-color: #969696;
+}
+
+.ui.blue.inline.button i{
+    margin-right: 5px;
+}
+
+p{
+    font-size: small;
+}
+
+.button_container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-right: 90px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.del_btn{
+    background-color: #969696;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: red;
+}
+
+.next_btn{
+    background-color: #969696;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: rgb(3, 145, 3);
+}

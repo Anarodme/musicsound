@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Recuperación de contraseña</h2>
+<hr>
+<div mat-dialog-content class="mydialog">
+  <input pattern="{{ emailPattern }}" type="text" placeholder="Ingrese su email" #Email (keyup)="checkEmailValidity(Email.value)">
+  <span ><h5>{{Mess}}</h5></span>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-default controls" mat-button (click)="closeDialog()">Cerrar</button>
+  <button class="btn btn-primary controls" mat-button color="primary" (click)="saveChanges()" [disabled]="!emailIsValid">Restablecer</button>
+</div>
+
+
+
+
+
+
+
+
+

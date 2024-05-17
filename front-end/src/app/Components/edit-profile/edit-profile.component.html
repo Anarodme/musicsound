@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="edit-profile">
+        <div class="title">
+            <h3>Editar Perfil</h3>
+        </div>
+        <form action="">
+        <div class="form-group">
+            <label for="user">Nombre de usuario</label>
+            <input type="text" id="username" minlength="6" [(ngModel)]="username" name="user" placeholder="Nombre de usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" [(ngModel)]="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <img class="logo-plan" [src]="['../../../assets/logo.png']"  alt="Logo">
+                <h5 class="card-title">Tu Plan</h5>
+                <p class="card-text">Versión: <a class="plan" href="">FREE</a></p>
+            </div>
+        </div>
+        <div class="button-container">
+            <button [routerLink]="['/']" class="btn-cancelar btn btn-danger">Cancelar</button>
+            <button (click)="saveProfile()" class="btn-guardar btn btn-primary">Guardar perfil</button>
+        </div>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+
+.container{
+  width: 100%;
+  background-color: black;
+  height: 100%;
+}
+.content{
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  margin: 200px;
+}
+.contenedor{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.livestreaming-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.streaming-video {
+  margin: 20px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.control-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.viewer-count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.viewer-icon {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+
+
+.btn-music,
+.btn-exit {
+  width: 120px; 
+  height: 120px; 
+  background: radial-gradient(circle, #1e1e1e 50%), linear-gradient(to right, #1e1e1e, #1e1e1e);
+  background-size: 100% 100%, 2px 100%;
+  background-position: center, 0 0;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  font-size: 30px;
+}
+.btn-record {
+  width: 120px; 
+  height: 120px; 
+  background: rgba(11, 78, 221, 0.973);
+  background-size: 100% 100%, 2px 100%;
+  background-position: center, 0 0;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  font-size: 24px; 
+  animation: none; /* Eliminamos la animación por defecto */
+}
+
+.btn-record.recording {
+  animation: pulse 0.5s infinite alternate;  /* Aplicamos la animación solo cuando está grabando */
+}
+
+.btn-record.paused {
+  animation: none;  /* Eliminamos la animación cuando está pausado */
+}
+
+.timer {
+  font-size: 18px; 
+}
+
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.progress-circle {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip: rect(0, 30px, 30px, 15px);
+  border-radius: 50%;
+}
+
+.left-half-clipper {
+  width: 15px;
+  height: 30px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 15px, 30px, 0);
+}
+
+.first50-bar,
+.value-bar {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.first50-bar {
+  clip: rect(0, 15px, 30px, 0);
+  background-color: #666666;
+}
+
+.value-bar {
+  clip: rect(0, 30px, 30px, 15px);
+  background-color: red;
+}
+
+.recording-text {
+  position: absolute;
+  top: 100%; /* Colocamos el texto debajo del botón de grabación */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: none;
+  height: 16px; /* Altura fija para el espacio reservado */
+}
+
+.btn-record.recording .recording-text {
+  display: block;
+}

@@ -1,0 +1,14 @@
+<div mat-dialog-content class="mydialog">
+    <p>Seleccione la playlist en la que quieres agregar la canción:</p>
+    <ul>
+        <li *ngFor="let playlist of playlists">
+            <img src="{{ playlist.coverImage }}" alt="{{ playlist.playlistName }}" width="30" height="30">
+            {{ playlist.playlistName }}
+            <button mat-button color="primary" (click)="saveSong(playlist.id, data.selectedSong.id)">Agregar</button>
+        </li>
+    </ul>
+  </div>
+  <div mat-dialog-actions>
+    <button class="btn btn-default controls" mat-button (click)="closeDialog()">Cerrar</button>
+  </div>
+  

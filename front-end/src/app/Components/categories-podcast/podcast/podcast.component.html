@@ -1,0 +1,22 @@
+<body>
+  <div class="container">
+    <!-- Name of podcast that you choose -->
+    <h3>{{ categoryName }}</h3>
+    <!-- Different types of podcast of the category -->
+    <div class="podcast">
+      <div *ngFor="let podcast of podcasts" class="card">
+        <div (click)="navigateToEpisodes(podcast.id)">
+          <img [src]="['http://127.0.0.1:8000'+podcast.coverImage]" [alt]="podcast.podcastTitle">
+          <div class="podcast-info">
+            <h2>{{ podcast.podcastTitle }}</h2>
+            <p>{{ podcast.user?.username }}</p>
+          </div>
+        </div>
+        <!--Favorite icon-->
+        <div class="heart-icon" (click)="toggleFavorite(podcast); $event.stopPropagation()">
+          <i class="fas fa-heart" [ngClass]="{'favorite': podcast.favorite}"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

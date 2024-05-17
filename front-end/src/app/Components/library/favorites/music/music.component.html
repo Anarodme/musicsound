@@ -1,0 +1,51 @@
+<div class="container">
+    <section class="content-a">
+        <header class="content__details">
+            <img class="content__details__cover" src="../assets/liked-songs.png">
+            <h1>LIKED SONGS</h1>
+        </header>
+        <!-- Play button for Liked Songs -->
+        <button class="button--primary button2 button-play">
+            <span class="glyphicon glyphicon-play"></span>Reproducir
+        </button>
+    </section>
+    <!--Song list titles-->
+    <div class="list-songs">
+        <!-- Table header for Song list -->
+        <div class="row table_header">
+            <div class="col">#</div>
+            <div class="col">Título</div>
+            <div class="col">Artista</div>
+            <div class="col">Album</div>
+            <div class="col">Favorito</div>
+            <div class="col">Duration</div>
+            <div class="col"></div>
+        </div>
+        <!-- Song list rows -->
+        <!-- <div class="row" *ngFor="let song of songs; let i = index" (mouseenter)="hoveredRowIndex = i"
+            (mouseleave)="hoveredRowIndex = -1">
+            <div class="col position-relative">{{ i + 1 }}
+                <button *ngIf="hoveredRowIndex === i" (click)="playSong(song)"
+                    class="button button--primary button-play">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+            </div>
+            <div class="col">
+                <a href="#">{{ song.title }}</a>
+            </div>
+            <div class="col">
+                <a href="#">{{ song.artist }}</a>
+            </div>
+            <div class="col">
+                <a href="#">{{ song.album }}</a>
+            </div>
+            <div class="col">
+                <span class="glyphicon"
+                    [ngClass]="{'glyphicon-heart': song.favorite, 'glyphicon-heart-empty': !song.favorite}"
+                    (click)="toggleFavorite(song)"></span>
+            </div>
+            <div class="col">{{ song.duration }}</div>
+            <div class="col"></div>
+        </div>-->
+    </div>
+</div>

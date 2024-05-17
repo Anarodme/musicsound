@@ -1,0 +1,33 @@
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>Inicia sesión en MusicSound</h3>
+            <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input [ngClass]="{'data-invalid':!username.valid && username.touched,'data-valid':username.valid && username.touched}" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^[a-zA-Z0-9._%+-]+$" type="text"
+                        id="username" ngModel name="username" placeholder="Nombre de usuario" required #username="ngModel">
+                    <span *ngIf="!username.valid && username.touched">Formato de Usuario incorrecto!</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input [ngClass]="{'data-invalid':!password.valid && password.touched,'data-valid':password.valid && password.touched}" type="password" minlength="8" id="password" ngModel name="password" placeholder="Contraseña"
+                        required #password="ngModel">
+                    <span *ngIf="!password.valid && password.touched">La contraseña debe contener al menos 8 caracteres!</span>
+                    <span *ngIf="loginError">{{errorMessage}}</span>
+                </div>
+                <button type="submit" [disabled]="!myForm.valid" class="btn-login btn btn-primary">Iniciar Sesión</button>
+            </form>
+            <div class="forgot-password">
+                <a style="cursor: pointer;" (click)="openModal()">¿Has olvidado tu contraseña?</a>
+                
+            </div>
+
+            <div class="line"></div>
+            <div class="no-account">
+                <p>¿No tienes una cuenta? <a [routerLink]="['/register']">Regístrate</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+

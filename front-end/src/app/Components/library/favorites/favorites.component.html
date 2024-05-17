@@ -1,0 +1,57 @@
+<div class="container">
+    <section class="content-a">
+      <header class="content__details">
+        <img class="content__details__cover" src="../assets/liked-songs.png">
+        <h1>{{ contentTypes[contentType]?.title }}</h1>
+      </header>
+      <div class="filter-dropdown">
+        <select class="dropdown-select" [(ngModel)]="contentType" (change)="onContentTypeChange()">
+          <option *ngFor="let type of contentTypeKeys" [value]="type">{{ contentTypes[type].title }}</option>
+        </select>
+      </div>
+    </section>
+    
+    <!-- Table display for liked-songs -->
+    <ng-container *ngIf="contentType === 'liked-songs'">
+      <div class="list-songs">
+        <div class="row table_header">
+          <div class="col" *ngFor="let header of contentTypes[contentType]?.headers">{{ header }}</div>
+          <div class="col"></div>
+        </div>
+        <!-- Content list rows -->
+        <div class="row" *ngFor="let song of songsData; let i = index">
+          <div class="col position-relative">{{ i + 1 }}</div>
+          <div class="col">
+            <a href="#">{{ song.songTitle }}</a>
+          </div>
+          <div class="col"></div>
+          <div class="col">{{ song.duration }}</div>
+          
+        </div>
+      </div>
+    </ng-container>
+  
+    <!-- Podcast cards display for liked-podcasts -->
+    <ng-container *ngIf="contentType === 'liked-podcasts'">
+      <div class="container-podcast">
+        <!-- Name of podcast that you choose -->
+        <h3></h3>
+      
+        <!-- Different types of podcast of the category -->
+        <div class="podcast">
+          <div *ngFor="let podcast of podcastsData" class="card" (click)="navigateToEpisodes(podcast.id)">
+            <img [src]="['http://127.0.0.1:8000'+podcast.coverImage]" [alt]="podcast.podcastTitle">
+            <div class="podcast-info">
+              <h2>{{ podcast.podcastTitle }}</h2>
+              <p>{{ podcast.autor }}</p>
+            </div>
+            <!-- Favorite icon -->
+            <div class="heart-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  

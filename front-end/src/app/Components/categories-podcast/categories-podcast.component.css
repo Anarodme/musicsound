@@ -1,0 +1,91 @@
+.container {
+    width: 100%;
+    background-color: black;
+    padding: 20px 0; 
+    color: white; 
+    align-items: center;
+    height: 800px;
+}
+  
+.container h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 35px; 
+    text-align: left; 
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+  
+.container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px; 
+    text-align: left; 
+    margin-left: 20px;
+    padding-bottom: 15px;
+}
+  
+.categories {
+    width: 1000px; 
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap: 30px;
+    
+}
+  
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center; 
+    color: white;
+    padding: 15px; 
+    background-color: #F24646; 
+
+}
+  
+.card img {
+    width: 100%; 
+    height: auto; 
+}
+  
+.categories-info {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+.categories-info h2 {
+    margin: 0;
+    font-size: 18px; 
+    padding: 8px;
+    text-align: center;
+    color: black;
+}
+  
+.year {
+    margin-top: 5px;
+    font-size: 0.9em;
+    text-align: center; 
+}
+
+@media screen and (max-width: 1200px) {
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .categories {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+  

@@ -1,0 +1,23 @@
+<div class="modal-background" *ngIf="showModal">
+    <div class="modal-container">
+        <h2>Editar Playlist</h2>
+        <form class="form-container" (ngSubmit)="saveChanges()">
+            <div class="form-group">
+                <label for="playlistName">Nombre de la playlist:</label>
+                <input type="text" id="playlistName" name="playlistName" [(ngModel)]="modalData.playlistName">
+            </div>
+
+            <div class="form-group">
+                <label for="playlistImage">Imagen de portada:</label>
+                <input type="file" (change)="onImageSelected($event)" id="playlistImage" name="playlistImage"
+                    accept="image/*">
+            </div>
+
+            <div class="button-container">
+                <button class="btn btn-primary">Guardar cambios</button>
+                <button class="btn btn-primary" (click)="closeModal()">Cancelar</button>
+            </div>
+        </form>
+
+    </div>
+</div>

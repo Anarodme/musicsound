@@ -1,0 +1,29 @@
+h2{
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    margin-left: 25%;
+
+}
+
+.controls{
+    display: flex;
+    float: right;
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
+
+span,h3{
+    color: white;
+    margin-left: 12.5%;
+}
+
+
+.mydialog{width: 600px; height: 100px;}

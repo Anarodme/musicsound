@@ -1,0 +1,80 @@
+<body>    
+    <div class="container">    
+        <div class="mycontainer">
+            <!--Title-->
+            <h1>{{title}} PÓDCAST</h1>
+    
+            <!--Edit form-->
+            <form #myForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                
+                <!--Save button-->
+                <div class="div_form save_btn">
+                    <button [disabled]="!myForm.valid" type="submit">{{titleBtn}} pódcast</button>
+                </div>
+
+                <ng-container *ngIf="edit">
+                    <div class="div_form">
+                        <label for="myPodcast">Mis Podcasts</label><br>
+                        <select (change)="onChangeMyPodcast()" class="categories_style" [(ngModel)]="myPodcastId" id="myPodcast" name="myPodcast" required #myPodcast="ngModel">
+                            <option value="">Selecciona el podcast</option> <!--Opción por defecto -->
+                            <option *ngFor="let object of myPodcasts" value={{object.id}}>{{object.podcastTitle}}</option>
+                        </select>
+                    </div>
+                </ng-container>
+                
+    
+                <!--Write name-->
+                <div class="div_form">
+                    <label for="podName">Nombre de podcast</label><br>
+                    <input class="input_style" ngModel type="text" id="podName" name="podName" required #podName="ngModel">
+                </div>
+    
+                <!--Write description-->
+                <div class="div_form">
+                    <label for="podDescription">Descripción</label><br>
+                    <input class="textarea_style" ngModel id="podDescription" name="podDescription" rows="4" required #podDescription="ngModel">
+                </div>
+    
+                <!--Select category-->
+                <div class="div_form">
+                    <label for="podCategories">Categorías</label><br>
+                    <select class="categories_style" ngModel id="podCategories" name="podCategories" required #podCategories="ngModel">
+                        <option value="">Selecciona una categoría</option> <!--Opción por defecto -->
+                        <option *ngFor="let object of podcastCategories" value={{object.id}}>{{object.name}}</option>
+                    </select>
+                </div>
+    
+                <!--Upload cover-->
+                <div class="div_form">
+                    <label for="pod_cover">Portada de pódcast</label><br>
+                    <div class="cover">
+                        <div class="ui segment">
+                            <div class="flex-container">
+                                <div class="img-container">
+                                    <!--Retrieves the image that the user entered and displays it.-->
+                                    
+                                </div>
+                                <div class="button-container">
+                                    <!--Button to upload image.-->
+                                    <input type="file" (change)="onFileSelected($event)" ngModel id="elegir" name="uploadedfile"
+                                        style="display: none;" #uploadedfile="ngModel" accept="image/*">
+                                    <label for="elegir" class="ui blue inline button">
+                                        Subir <i class="fas fa-upload"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <ng-container *ngIf="edit">
+                <div class="button_container">
+                    <!--Delete button-->
+                    <button class="del_btn" [disabled]=" myPodcastId ==='' " (click)="openModal()" type="submit">Eliminar pódcast</button>
+                </div>
+            </ng-container>
+            
+        </div>
+    </div>
+</body>

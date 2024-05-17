@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top: 40px;">
+    <a *ngFor="let artist of artists" (click)="selectArtist(artist.id)">
+      <div class="col-sm-3 card">
+        <div class="frame">
+          <img [src]="artist.coverImage" alt="">
+        </div>
+        <div class="text-frame">
+          <h4>{{artist.artistName}}</h4>
+          <p>
+            {{artist.description}}
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

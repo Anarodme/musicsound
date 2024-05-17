@@ -1,0 +1,102 @@
+.container1 {
+    background-color: black;
+    width: auto;
+    height: 400px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.mediaDetails {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.cover-image{
+    height: 150px;
+    width: 150px;
+    align-content: first baseline;
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-style {
+    display: flex;
+    align-items: center;
+}
+
+.time-left,
+.time-right {
+    font-size: 15px;
+    text-align: left;
+}
+
+.song-info {
+    text-align: left; 
+    padding-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center; 
+}
+
+
+.controls button {
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.btn i {
+    font-size: 20px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.play-pause-btn {
+    color: white;
+    border-radius: 30px;
+    background-color: blue;
+    border: none;
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.play-pause-btn:hover,
+.play-pause-btn:focus,
+.play-pause-btn:active {
+    background-color: blue;
+}
+
+.skip-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-right: 20px;
+}
+
+.skip-btn:hover,
+.skip-btn:focus,
+.skip-btn:active {
+    background-color: transparent;
+    border: 1px solid white;
+}

@@ -1,0 +1,13 @@
+django==5.0.1
+djangorestframework==3.14.0
+django-environ ==0.4.5
+mysqlclient==2.2.4
+django-cors-headers==4.3.1
+numpy==1.26.4
+lameenc==1.7.0
+sounddevice==0.4.6
+soundfile==0.12.1
+wave==0.0.2
+mutagen==1.47.0
+Pillow==10.2.0
+requests==2.31.0

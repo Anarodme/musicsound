@@ -1,0 +1,170 @@
+/*LOGIN*/
+.container {
+    width: 100%;
+    background-color: #1F1D1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    font-family: 'Poppins', sans-serif;
+    background-color: #453D3D;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    height: 700px;
+    margin: 0 auto; 
+    display: block; 
+    
+}
+
+.card h3 {
+    color: white;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+   
+}
+
+.form-group label,span {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 5px;
+    margin-left: 140px;
+    
+
+}
+
+.form-group input {
+    width: 460px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #1F1D1D;
+    background-color: transparent;
+    color: #fff;
+    margin-top: 10px;
+    margin: 0 auto; 
+    display: block; 
+   
+}
+
+.forgot-password,
+.no-account {
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    padding: 35px;
+}
+
+.forgot-password a,
+.no-account a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-login {
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5551FF;
+    color: white;
+    cursor: pointer;
+    margin-top: 200px;
+    margin: 0 auto; 
+    display: block; 
+    font-weight: bold;
+}
+.line{
+    height: 1px; 
+    background-color: #ccc; 
+    margin: 20px 0; 
+}
+
+.form-group .data-invalid{
+    border: 1px solid red;
+}
+
+.form-group .data-valid{
+    border: 1px solid rgb(0, 0, 0);
+    
+}
+
+/* Breakpoints para dispositivos grandes */
+@media (max-width: 992px) {
+    .card {
+        width: 90%;
+    }
+
+    .form-group label,span {
+        margin-left: 20px;
+    }
+
+    .form-group input {
+        width: calc(100% - 40px);
+        margin: 0 auto; 
+        display: block; 
+    }
+}
+
+/* Breakpoints para dispositivos medianos */
+@media (max-width: 576px) {
+    .card {
+        width: 90%;
+        height: auto;
+    }
+
+    .form-group label,span {
+        margin-left: 20px;
+    }
+
+    .form-group input {
+        width: calc(100% - 40px);
+        margin: 0 auto; 
+        display: block; 
+    }
+}
+/* Breakpoints para dispositivos pequeños */
+@media (max-width: 350px) {
+    .card {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 36px;
+    }
+
+    .form-group label,span {
+        margin-left: 20px;
+    }
+
+    .form-group input {
+        width: calc(100% - 40px);
+        margin: 0 auto; 
+        display: block; 
+    }
+
+    .forgot-password,
+    .no-account {
+        padding: 20px;
+    }
+
+    .btn-login {
+        margin-top: 20px;
+    }
+
+    .line {
+        margin: 10px 0;
+    }
+
+}

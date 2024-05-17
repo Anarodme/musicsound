@@ -1,0 +1,101 @@
+<body>
+    <div class="container-info">
+        <!--Title-->
+        <div class="title">
+            <h1>Musicsound</h1><img [src]="['../../../assets/logo2.jpg']" alt="">
+        </div>
+
+        <p class="lema">"Escucha, Conecta, Comparte: Tu mundo auditivo en un solo lugar."</p>
+
+        <!--About us?-->
+        <div class="descrip">
+            <h4>¿Quiénes somos?</h4>
+            <p>En musicsound, somos un equipo apasionado dedicado a proporcionar una experiencia auditiva excepcional a
+                nuestros usuarios. Nos enorgullece ofrecer una plataforma donde los amantes de la música y los podcasts
+                pueden encontrar su hogar digital, explorar nuevos sonidos, conectar con artistas emergentes y compartir
+                sus
+                pasiones con una comunidad vibrante y comprometida.
+                En musicsound, nos impulsa la innovación constante y el deseo de ofrecer una experiencia de usuario
+                excepcional. Desde el descubrimiento de nuevos talentos hasta la creación de contenido personalizado,
+                estamos comprometidos a brindar una experiencia auditiva personalizada y enriquecedora para cada uno de
+                nuestros usuarios.
+                Únete a nosotros en nuestro viaje para explorar, descubrir y compartir la música y los podcasts que te
+                mueven. En musicsound, creemos en el poder de la música para unir a las personas y transformar vidas.
+                ¡Bienvenido a nuestra comunidad!
+            </p>
+        </div>
+
+        <!--Promotional video-->
+        <div class="video">
+            <video autoplay controls>
+                <source [src]="['../../../assets/Video promocional.mp4']" type="video/mp4">
+            </video>
+        </div>
+
+        <!--Mission and Vision of musicsound-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Misión</h4>
+                            <p class="card-text">En musicsound, nos comprometemos a ofrecer a nuestros usuarios una
+                                experiencia auditiva excepcional, donde puedan descubrir, disfrutar y compartir su
+                                música y
+                                podcasts favoritos de manera fácil y accesible.</p>
+                            <p class="card-text">Nos esforzamos por ser una plataforma inclusiva que fomente la
+                                diversidad
+                                musical y la creatividad, al mismo tiempo que proporcionamos un espacio para que los
+                                usuarios encuentren nuevas voces y perspectivas.</p>
+                            <p class="card-text">Nuestro objetivo es enriquecer la vida de las personas a través de la
+                                música, conectando a artistas, creadores de contenido y oyentes de todo el mundo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Visión</h4>
+                            <p class="card-text">En musicsound, aspiramos a ser la principal plataforma global para el
+                                descubrimiento y disfrute de la música y los podcasts.</p>
+                            <p class="card-text">Nos visualizamos como un destino indispensable para los amantes de la
+                                música y los entusiastas de los podcasts, ofreciendo una amplia gama de contenido de
+                                alta
+                                calidad que se adapte a todos los gustos y preferencias.</p>
+                            <p class="card-text">Buscamos constantemente innovar y mejorar nuestra plataforma, brindando
+                                nuevas y emocionantes funciones que enriquezcan la experiencia del usuario y fomenten
+                                una
+                                comunidad vibrante y comprometida.</p>
+                            <p class="card-text">Nuestra visión es ser reconocidos como el hogar digital de la música y
+                                los
+                                podcasts, donde la creatividad florezca y las conexiones entre los usuarios se
+                                fortalezcan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Contact us-->
+        <div>
+            <h3>¡Contáctanos!</h3>
+            <div *ngIf="showMessage" class="message">{{ messageText }}</div>
+            <form class="container-form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required [(ngModel)]="formData.nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required [(ngModel)]="formData.email">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required [(ngModel)]="formData.mensaje"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>

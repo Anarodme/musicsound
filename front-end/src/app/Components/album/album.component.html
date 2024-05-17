@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Álbumes</h2>
+    <div class="albumes">
+        <a *ngFor="let album of albumes" (click)="navigateToSong(album.id)"
+            (click)="selectAlbum(album)">
+            <div class="card">
+                <img [src]="album.coverImage" [alt]="album.albumTitle">
+                <div class="album-info">
+                    <h2>{{ album.albumTitle }}</h2>
+                    <p class="year">{{ album.releaseDate.slice(0, 4) }} - Álbum</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div *ngIf="!albumes || albumes.length === 0">
+        <p>No se encontraron álbumes para el artista seleccionado.</p>
+    </div>
+</div>

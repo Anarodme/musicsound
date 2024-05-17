@@ -1,0 +1,69 @@
+<div class="content">
+    <div class="container" *ngIf="albums">
+
+        <!-- Album details section -->
+        <section class="content-a">
+            <header class="content__details">
+                <!-- Album cover image -->
+                <img class="content__details__cover" [src]="albums.songs[0]?.album.coverImage"
+                    [alt]="albums.songs[0]?.album.albumTitle">
+
+                <!-- Album information -->
+                <div class="album-info">
+                    <h4>Album</h4>
+                    <p class="tituloAlbum">{{ albums.songs[0]?.album.albumTitle }}</p>
+                    <p>
+                        {{ albums.songs[0]?.album.artist?.artistName }},
+                        {{ albums.songs[0]?.album.releaseDate.slice(0,4) }},
+                        {{ albums.songs.length }} songs
+                    </p>
+                    <ng-template #noArtistDetails>
+                        <p>No artist details available</p>
+                    </ng-template>
+                </div>
+            </header>
+        </section>
+
+        <!-- Song list section -->
+        <div class="list-songs" *ngIf="albums.songs && albums.songs.length > 0">
+            <!-- Table header for Song list -->
+            <div class="row table_header">
+                <div class="col">#</div>
+                <div class="col">Título</div>
+                <div class="col">Artista</div>
+                <div class="col">Duración</div>
+                <div class="col"><i class="fas fa-heart"></i></div>
+                <div class="col"></div>
+            </div>
+
+            <!-- Iterate over songs to display each song -->
+            <div *ngFor="let song of albums.songs; let i = index" class="row">
+                <div class="col position-relative">{{ i + 1 }}
+                    <!-- Play button for each song -->
+                    <button (click)="playSong(song)" class="button button--primary button-play">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </button>
+                </div>
+                <div class="col">{{ song.songTitle }}</div>
+                <div class="col">{{ song.album.artist.artistName }}</div>
+                <div class="col">{{ song.duration.slice(3,8)  }}</div>
+                <div class="col">
+                    <!-- Toggle favorite button -->
+                    <button class="gly" (click)="toggleFavorite(song)">
+                        <span *ngIf="song.favorite" class="glyphicon glyphicon-heart"></span>
+                        <span *ngIf="!song.favorite" class="glyphicon glyphicon-heart-empty"></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <a (click)="modalPlaylist(song)" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Player controls section -->
+    <app-player-controls *ngIf="selectedSong" [selectedSong]="selectedSong" [songs]="albums.songs"
+        [showControls]="showPlayerControls" [mediaType]="'audio'">
+    </app-player-controls>
+</div>

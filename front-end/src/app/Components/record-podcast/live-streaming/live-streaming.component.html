@@ -1,0 +1,41 @@
+<div class="contenedor">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- Main container for the live streaming section -->
+                <div class="livestreaming-container">
+                    <!-- Content area inside the livestreaming container -->
+                    <div class="content">
+                        <!-- Controls section for the music and recording features -->
+                        <div class="controls text-center">
+                            <button class="btn btn-music control-button" (click)="openModal()">
+                                <i class="fas fa-music"></i>  
+                            </button>
+                            
+                            <!-- Button for recording, with dynamic classes based on recording state -->
+                            <button (click)="toggleMicrophone()" class="btn btn-record control-button">
+                                <i class="fas fa-microphone"></i>
+                                <div class="progress-circle">
+                                    <div class="left-half-clipper">
+                                        <div class="first50-bar"></div>
+                                        <div class="value-bar"></div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- Button to exit/cancel the recording -->
+                            <button (click)="stopTransmission()" class="btn btn-exit control-button">
+                                <i class="fas fa-times"></i>
+                            </button>
+
+                            <!-- Viewer count display -->
+                            <div *ngFor="let stream of streamsEnVivo | keyvalue" class="viewer-count text-right">
+                                <i class="fas fa-eye viewer-icon"></i> <span>{{stream.value.source.listeners}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

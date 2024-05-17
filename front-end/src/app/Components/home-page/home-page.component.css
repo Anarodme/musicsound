@@ -1,0 +1,41 @@
+.myContainer{
+    width: 1000px;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Poppins';
+
+}
+
+
+
+h1{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.img-frame{
+    background-color: rgb(0, 0, 0); margin-left: 10px; margin-right: 5px;
+}
+
+.text-frame{
+    background-color: rgb(0, 0, 0); margin-left: 10px; margin-right: 5px; color: white; text-align: justify;
+}
+
+img{
+    width: 350px; height: 200px; border-radius: 3%;
+}
+
+.frame-copy{
+    background-color:  #0c0c0c ; color: white; height: 67px; padding-top: 25px;
+}
+
+
+
+aside{
+    background-color: aqua;
+    width: 400px;
+    height: 700px;
+    float: left;
+}

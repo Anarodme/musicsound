@@ -1,0 +1,53 @@
+<div class="content">
+    <div class="container">
+        <div class="left-section">
+            <h3>GRABAR PÓDCAST</h3>
+            <div class="card">
+                <button type="button" (click)="checkTransmission()" class="btn btn-default float-left">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+                </button>
+                <h4 class="float-right">Transmitir y grabar</h4>
+            </div>
+            <div class="card">
+                <button routerLink="/categories" type="button" class="btn library-btn">
+                    <i class="glyphicon glyphicon-book"></i>
+                </button>
+                <h4>Biblioteca</h4>
+            </div>
+            <form #myForm="ngForm">
+                <div class="form-group">
+                    <label for="nombreepisodio">Nombre del Episodio</label>
+                    <input type="text" id="nombreepisodio" ngModel name="nombreepisodio" placeholder="Nombre del Episodio" required #nombreepisodio="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="descripcionepisodio">Descripción del Episodio</label>
+                    <textarea id="descripcionepisodio" ngModel name="descripcionepisodio" placeholder="Descripción del Episodio" required #descripcionepisodio="ngModel"></textarea>
+                </div>
+
+                <!-- Dropdown list to select the microphone -->
+                <div class="form-group">
+                    <label for="select-microphone">Seleccionar Micrófono</label>
+                    <select id="select-microphone" name="select-microphone" class="form-control" [(ngModel)]="selectedMicrophone">
+                        <option *ngFor="let device of audioDevices" [ngValue]="device">{{ device.id }}. {{ device.name }} (Channel: {{ device.max_input_channels }}) </option>
+                    </select>
+                </div>
+                <button type="button" class="btn cancel-btn">Cancelar</button>
+                <button type="submit" class="btn save-btn">Guardar Pódcast</button>
+            </form>
+        </div>
+        <div class="right-section">
+            <div class="card">
+                <h4>Suba aquí sus archivos desde su ordenador</h4>
+                <div class="ui segment">
+                    <div class="field">
+                        <input type="file" id="elegir" name="uploadedfile" style="display: none;" />
+                        <label for="elegir" class="btn btn-primary subir">
+                            <span class="glyphicon glyphicon-upload"></span> Subir
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

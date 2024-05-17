@@ -1,0 +1,57 @@
+<body>
+    <div class="container">
+        <h1>MIS PLAYLISTS</h1>
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button class="btn btn-primary float-right" (click)="showForm = true">+ Crear</button>
+            </div>
+        </div>
+
+        <div class="form-container" *ngIf="showForm">
+            <!-- Formulario para crear una nueva playlist -->
+            <form (submit)="createNewPlaylist()" enctype="multipart/form-data">
+                <label for="playlistName">Nombre:</label>
+                <input type="text" [(ngModel)]="newPlaylistName" id="playlistName" name="playlistName" required>
+
+                <!-- Input para seleccionar una imagen -->
+                <label for="playlistImage">Imagen:</label>
+                <input type="file" (change)="onImageSelected($event)" id="playlistImage" name="playlistImage"
+                    accept="image/*">
+
+                <button class="btn btn-primary" type="submit">Guardar</button>
+                <button class="btn btn-primary" type="button" (click)="cancelCreation()">Cancelar</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" *ngFor="let playlist of playlists">
+                <div class="card">
+
+                    <div class="divSongs">
+                        <img (click)="navigateToSongs(playlist.id)" [src]="playlist.coverImage"
+                        alt="{{ playlist.playlistName }}" class="playlist-image">
+                    </div>
+                    
+
+                    <div class="card-body">
+                        <h3 class="card-title">{{ playlist.playlistName }}</h3>
+                        <div class="button-container">
+                            <div>
+                                <button class="btn btn-danger" (click)="deletePlaylist(playlist.id)">Eliminar</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-warning" (click)="openEditModal(playlist)">Editar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integración del componente modal -->
+        <app-modal-playlist-edit [showModal]="showModal" [modalData]="{ playlistName: newPlaylistName }"
+            (closeModalEvent)="closeModal()" (saveChangesEvent)="updatePlaylist($event)">
+        </app-modal-playlist-edit>
+    </div>
+</body>

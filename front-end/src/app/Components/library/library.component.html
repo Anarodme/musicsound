@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>MI BIBLIOTECA</h2>
+
+    <div class="library">
+        <!-- Playlists -->
+        <div class="card" (click)="navigateToPlaylist(libraryId)">
+          <img src="../assets/playlist.jpg" alt="Playlist">
+          <div class="library-info">
+            <h2>Playlists</h2>
+          </div>
+        </div>
+
+        <!--Artists-->
+        <a href="/">
+            <div class="card">
+                <img src="../assets/karol-g.jpg" alt="Artistas">
+                <div class="library-info">
+                    <h2>Artistas</h2>
+                </div>
+            </div>
+        </a>
+        <!--Podcast-->
+        <a href="/categories">
+            <div class="card">
+                <img src="../assets/podcast.jpg" alt="Podcasts">
+                <div class="library-info">
+                    <h2>Podcasts</h2>
+                </div>
+            </div>
+        </a>       
+        <!-- Favorites -->
+        <a [routerLink]="['/favorites',libraryId]">
+            <div class="card">
+                <span class="heart-icon">&#9829;<img src="../assets/favorites.jpg" alt="favorites"></span>
+                <div class="library-info">
+                    <h2>Favoritos</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

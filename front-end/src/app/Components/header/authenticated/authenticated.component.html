@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-inverse" style="border-bottom: 1px solid white;">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse">
+
+      <div class="navbar-header" style="width: 115px; height: 95px; padding-top: .5%; padding-bottom: .5%;" >
+        <img style="width: 100%; height: 100%;" [src]="[imagePath]" alt="">
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown perfil" appDropdown>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Perfil <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a [routerLink]="['editProfile/']" style="cursor: pointer;">Editar Perfil</a></li>
+              <li><a [routerLink]="['editPodcast/','Crear']" style="cursor: pointer;">Crear Podcast</a></li>
+              <li><a [routerLink]="['editPodcast/','Editar']" style="cursor: pointer;">Editar Podcast</a></li>
+              <li><a [routerLink]="['library/']" style="cursor: pointer;">Mi biblioteca</a></li>
+              <li class="divider"></li>
+              <li><a (click)="logout()" style="cursor: pointer;">Cerrar sesión</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,33 @@
+<body>
+    <div class="container-epi">
+        <div class="episodes">
+            <img [src]="['http://127.0.0.1:8000'+episodes[0]?.podcast?.coverImage]" alt="{{ episodes[0]?.podcast?.podcastTitle }}">
+            <div class="episode-info">
+                <h1>{{ episodes[0]?.podcast?.podcastTitle }}</h1>
+                <h4>{{ episodes[0]?.podcast?.user?.username }}</h4>
+                <p>{{ episodes[0]?.podcast?.description }}</p>
+            </div>
+        </div>
+
+        <div class="episodes-all">
+            <h5>Todos los episodios</h5>
+            <hr class="line">
+        </div>
+
+        <!--List of episodes-->
+        <div *ngFor="let episode of episodes" class="list-epi">
+            <img [src]="['http://127.0.0.1:8000'+episode.podcast?.coverImage]" alt="{{ episodes[0]?.podcast?.podcastTitle }}">
+            <div class="details">
+                <h4>{{ episode?.episodeTitle }}</h4>
+                <p>{{ episode?.description }}</p>
+                <div class="inf-epi">
+                    <button class="btn btn-primary play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <p>{{ episode?.releaseDate | date }}</p>
+                    <p>{{ episode?.duration }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

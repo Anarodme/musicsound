@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <h2 class="text-center">Pagá tu plan</h2>
+        <form class="form">
+            <div class="form-group">
+                <label class="control-label">Método de pago</label>
+                <div class="col-sm-4">
+                    <select class="form-control">
+                        <option value="tarjeta">Tarjeta de crédito</option>
+                        <option value="debito">Débito</option>
+                        <option value="transferencia">Transferencia bancaria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Datos del pago</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" [(ngModel)]="cardHolder" name="cardHolder" placeholder="Titular de la tarjeta" required>
+                    <input type="text" class="form-control" [(ngModel)]="cardNumber" name="cardNumber" placeholder="Número de la tarjeta" required>
+                    <input type="date" class="form-control" [(ngModel)]="expirationDate" name="expirationDate" placeholder="Fecha de vencimiento" required>
+                    <input type="password" class="form-control" [(ngModel)]="securityCode" name="securityCode" placeholder="Código de seguridad" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-info btn-comprar" (click)="realizarCompra()">COMPRAR AHORA</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

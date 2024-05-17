@@ -1,0 +1,86 @@
+.container {
+    width: 100%;
+    background-color: #1F1D1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    font-family: 'Poppins', sans-serif;
+    background-color: #453D3D;
+    padding: 130px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card h2 {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col {
+    align-items: center;
+}
+
+.form-control {
+    height: 50px;
+    align-items: center;
+}
+
+.form-control option {
+    color: #1F1D1D;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.form-group input,
+.form-group select {
+    width: 460px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #1F1D1D;
+    background-color: transparent;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+}
+
+.btn-comprar {
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5551FF;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}

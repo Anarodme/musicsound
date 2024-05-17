@@ -1,0 +1,135 @@
+.container1{
+    background-color: black;
+    width: auto;
+    height: 900px;
+    font-family: 'Poppins';
+    color: white;
+}
+
+/*Song information*/
+.title1{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.title2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.song-cover{
+    width: 500px;
+    height: 500px;
+    padding-top: 15px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.song-info{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    padding-right: 295px;
+}
+
+.info{
+    padding-top: 20px;
+    padding-left: 170px;
+    flex-grow: 1; 
+    text-align: left; 
+}
+
+.p1{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.p2{
+    font-size: 16px;
+}
+
+/*Player controls*/
+.player-button{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.btn i {
+   font-size: 25px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+#favoriteBtn {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.play-pause-btn {
+    color: white;
+    border-radius: 30px;
+    background-color: blue;
+    border: none;
+    margin-right: 20px;
+}
+
+.play-pause-btn:hover,
+.play-pause-btn:focus,
+.play-pause-btn:active {
+    background-color: blue; 
+}
+
+.skip-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-right: 20px;
+}
+
+.skip-btn:hover,
+.skip-btn:focus,
+.skip-btn:active {
+    background-color: transparent; 
+    border: black;
+}
+
+/*Progress bar*/
+.progress-style{
+    width: 600px;
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: white;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: white;
+    border: 2px solid white; 
+    height: 15px; 
+    width: 15px; 
+    margin-top: -6px;
+}
+
+.time-left {
+    margin-right: auto; 
+    padding-right: 15px;
+    font-size: 15px;
+}
+  
+.time-right {
+    margin-left: auto; 
+    padding-left: 15px;
+    font-size: 15px;
+}

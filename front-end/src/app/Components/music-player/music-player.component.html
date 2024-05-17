@@ -1,0 +1,55 @@
+<body>
+    <div class="container1">
+        <!--Playing from...-->
+        <p class="title1">REPRODUCIENDO DESDE {{currentPlayingType}}</p>
+
+        <!--Favorite-podcast-album-playlist name-->
+        <p class="title2">{{content_name}}k</p>
+
+        <div>
+            <!--Audio cover-->
+            <img class="song-cover" [src]='content_cover' alt="">
+        </div>
+
+        <div class="song-info">
+            <div class="info">
+                <!--Song-Podcast name and artist-->
+                <p class="p1">{{audioNames[currentSongIndex]}}</p>
+                <p class="p2">{{artist}}</p>
+            </div>
+    
+            <!--Favorite button-->
+            <button id="favoriteBtn" class="btn btn-outline-danger"><i id="heartIcon" class="fas fa-heart"></i></button>
+        </div>
+
+        <!--Audio of the song or podcast-->
+        <audio #audioPlayer>
+            <source [src]="audios[currentSongIndex]" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <!--Player controls-->
+        <div class="controls mt-3 player-button">
+            <!--Previous song button-->
+            <button (click)="play_previous_song()" class="btn btn-primary skip-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <!--Play/pause button-->
+            <button (click)="play_pause_song()" class="btn btn-primary play-pause-btn">
+                <i class="fas" [ngClass]="getPlayButtonIcon()"></i>
+            </button>
+            <!--Next song button-->
+            <button (click)="play_next_song()" class="btn btn-primary skip-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+
+        <!--Progress bar-->
+        <div class="progress-style">
+            <div class="time-left">{{ currentTime }}</div>
+            <input id="progressBar" type="range" class="form-range" min="0" max="100" [value]="progressValue"
+                (input)="handleProgressBar($event)">
+            <div class="time-right">{{ duration }}</div>
+        </div>
+    </div>
+</body>

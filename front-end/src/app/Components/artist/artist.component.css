@@ -1,0 +1,44 @@
+.card{
+    background-color: #1f1717;
+    margin-left: 60px;
+    border-radius: 3%;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+    height: 400px;
+    font-family: 'Poppins';
+}
+
+.frame{
+    width: 220px; 
+    height: 182px; 
+    border-radius: 3%; 
+    margin-top: 10px; 
+    margin-bottom: 5px;
+}
+
+.text-frame{
+    width: 220px; height: 150px; border-radius: 3%; margin-bottom: 10px; text-align: justify;
+}
+
+img{
+    width: 100%; height: 100%; border-radius: 3%;
+}
+
+h4{
+    color: white; font-weight: bold;
+    font-family: 'Poppins';
+}
+
+p{
+    color: #c0c0c0;
+    font-family: 'Poppins';
+}
+
+
+
+.card:hover{
+    background-color: #312424;
+    transition: 0.2s ease-in-out;
+    text-decoration: none; /* Esto elimina el subrayado cuando pasas el mouse sobre el enlace */
+    cursor: default; /* Esto cambia el cursor cuando pasas el mouse sobre el enlace */
+}
