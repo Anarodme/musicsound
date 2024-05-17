@@ -1,4 +1,9 @@
 
+Music playback project, selection of songs, albums, artists, podcasts, episodes and user creation and authentication.
+Tools used:
+Frontend: HTML5, CSS, Angular.
+Backend: Python, Django Framework
 
-Uploading WhatsApp Video 2024-05-17 at 3.42.22 PM.mp4…
+
+https://github.com/Anarodme/musicsound/assets/109930993/395ec431-c1a0-4699-969e-891fc2e74c95
 
